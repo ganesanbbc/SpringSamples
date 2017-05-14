@@ -1,0 +1,34 @@
+!SESSION 2017-05-14 18:12:27.898 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/apple/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/apple/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-05-14 18:13:06.022
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2017-05-14 18:15:07.059
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2017-05-14 18:24:46.810
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.wst.server.core 4 0 2017-05-14 18:28:55.513
+!MESSAGE Server Tomcat v8.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.ui 4 4 2017-05-14 18:30:55.594
+!MESSAGE Conflicting handlers for org.eclipse.ui.navigate.backwardHistory: {ActionHandler(org.eclipse.ui.internal.dialogs.PreferencePageHistory$1@418f4427)} vs {ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@5a6f1342)}
+
+!ENTRY org.eclipse.jface.text 2 0 2017-05-14 18:33:38.705
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-05-14 18:33:38.705
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.ui 4 4 2017-05-14 18:37:07.736
+!MESSAGE Conflicting handlers for org.eclipse.ui.navigate.backwardHistory: {ActionHandler(org.eclipse.ui.internal.dialogs.PreferencePageHistory$1@71357e64)} vs {ActionHandler(org.eclipse.ui.internal.NavigationHistoryAction@5a6f1342)}
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2017-05-14 18:45:41.578
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
