@@ -18,8 +18,8 @@ import java.util.List;
 @RestController
 public class PublisherApplication {
 
-	public static final String MY_PROJECT_ID = "my-project-id";
-	public static final String MY_TOPIC_ID = "my-topic-id";
+	public static final String MY_PROJECT_ID = "pubsubdemo-169407";
+	public static final String MY_TOPIC_ID = "MyTripQ";
 
 	public static void main(String[] args) {
 		SpringApplication.run(PublisherApplication.class, args);
