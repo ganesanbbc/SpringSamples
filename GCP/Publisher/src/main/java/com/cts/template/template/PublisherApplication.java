@@ -8,6 +8,8 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ public class PublisherApplication {
 	}
 
 
+	@RequestMapping(value = "/postMessage", method = RequestMethod.GET)
 	public void publish() throws Exception{
 		TopicName topicName = TopicName.create(MY_PROJECT_ID, MY_TOPIC_ID);
 		Publisher publisher = null;
