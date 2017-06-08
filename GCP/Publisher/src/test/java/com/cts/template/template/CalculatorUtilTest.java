@@ -4,14 +4,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SampleDemoTest {
+public class CalculatorUtilTest {
 
-    private SampleDemo sample ;
+    private CalculatorUtil sample ;
 
     @Test
     public void thatGotSumValueWhenPassingPlusActionCodeAndValues(){
         int expected = 10;
-        sample = new SampleDemo();
+        sample = new CalculatorUtil();
         int actual = sample.calculate(1,5,5);
         assertEquals(expected, actual);
     }
@@ -19,7 +19,7 @@ public class SampleDemoTest {
     @Test
     public void thatGotSubtractedValueWhenPassingMinusActionCodeAndValues(){
         int expected = 4;
-        sample = new SampleDemo();
+        sample = new CalculatorUtil();
         int actual = sample.calculate(2,5,1);
         assertEquals(expected, actual);
     }

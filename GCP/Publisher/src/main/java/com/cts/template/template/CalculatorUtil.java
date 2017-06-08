@@ -1,7 +1,7 @@
 package com.cts.template.template;
 
 
-public class SampleDemo {
+public class CalculatorUtil {
 
     private int tmpCounter;
 

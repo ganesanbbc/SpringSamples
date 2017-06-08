@@ -34,7 +34,7 @@ public class PublisherApplication {
 		Publisher publisher = null;
 		List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
 
-		new SampleDemo();
+		new CalculatorUtil();
 
 		try {
 			// Create a publisher instance with default settings bound to the topic
