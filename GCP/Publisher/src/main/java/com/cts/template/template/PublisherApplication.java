@@ -34,6 +34,8 @@ public class PublisherApplication {
 		Publisher publisher = null;
 		List<ApiFuture<String>> messageIdFutures = new ArrayList<>();
 
+		new SampleDemo();
+
 		try {
 			// Create a publisher instance with default settings bound to the topic
 			publisher = Publisher.defaultBuilder(topicName).build();
