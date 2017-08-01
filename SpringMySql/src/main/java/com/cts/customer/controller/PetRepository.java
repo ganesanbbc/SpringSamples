@@ -1,6 +1,8 @@
 package com.cts.customer.controller;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PetRepository extends CrudRepository<Pets, Long> {
+@Repository
+public interface PetRepository extends JpaRepository<Cats, Long> {
 }

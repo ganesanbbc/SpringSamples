@@ -14,11 +14,11 @@ public class PetController {
     public static final String INDEX_PAGE = "index";
 
     @Autowired
-    PetRepository repository;
+    private PetRepository repository;
 
     @RequestMapping(value = {ROOT, INDEX_URL})
     public String getPets() {
-
+        repository.save(new Cats("test"+System.currentTimeMillis()));
         return INDEX_PAGE;
     }
 
