@@ -1,4 +1,4 @@
-package com.cts.demo;
+package com.cts.demo.model;
 
 public class Customer {
 
