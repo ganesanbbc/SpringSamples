@@ -1,5 +1,6 @@
 package com.cts.demo;
 
+import com.cts.demo.controller.CustomerController;
 import com.cts.demo.service.CustomerService;
 import com.cts.demo.service.CustomerServiceImple;
 import org.springframework.context.ApplicationContext;
@@ -11,8 +12,13 @@ public class Application {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        CustomerService customerService = context.getBean("customerService", CustomerService.class);
 
-        System.out.println(customerService.findAll().get(0).getFirstName());
+        CustomerController customerController = context.getBean("customController", CustomerController.class);
+//
+        customerController.getCustomer();
+
+//        CustomerService customerService = context.getBean("customerService", CustomerService.class);
+//
+//        System.out.println(customerService.findAll().get(0).getFirstName());
     }
 }
