@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/")
 public class UserInfoController {
 
     public interface EndPoint {
         String ROOT = "/";
-        String CREATE_USER = "/createUser";
-        String READ_USER = "/readUser";
-        String UPDATE_USER = "/updateUser";
-        String DELETE_USER = "/deleteUser/{id}";
+        String CREATE_USER = "createUser";
+        String READ_USER = "readUser";
+        String UPDATE_USER = "updateUser";
+        String DELETE_USER = "deleteUser/{id}";
     }
 
     @Autowired
