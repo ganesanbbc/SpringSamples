@@ -1,0 +1,62 @@
+package com.cts.userinfo.template;
+
+import com.cts.userinfo.dao.UserInfoDAOImpl;
+import com.cts.userinfo.service.UserInfoService;
+import com.cts.userinfo.vo.UserInfo;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThat;
+
+/**
+ * Created by ganesanns on 04/08/17.
+ */
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
+public class CustomerServiceTest {
+
+    @InjectMocks
+    UserInfoService customerService;
+
+    @Mock
+    UserInfoDAOImpl customerDao;
+
+    @Before
+    public void setup() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void shouldCreateTheCustomer() throws Exception {
+        UserInfo customer = new UserInfo("Sample");
+        Mockito.when(customerDao.createUser(customer)).thenReturn(customer);
+        UserInfo actual = customerService.createUserInfo(customer);
+        assertEquals(customer.getUserName(), actual.getUserName());
+    }
+
+    @Test
+    public void thatRespondListOfCustomers() {
+        List<UserInfo> customerList = new ArrayList<>();
+        customerList.add(new UserInfo("Test UserInfo"));
+        Mockito.when(customerDao.readAllUsers()).thenReturn(customerList);
+
+        List<UserInfo> actualCustomerList = customerService.readAllUsers();
+        assertThat(actualCustomerList.size(), is(customerList.size()));
+    }
+
+}
