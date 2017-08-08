@@ -1,9 +1,19 @@
 package com.cts.userinfo.vo;
 
+import org.springframework.context.annotation.Primary;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class UserInfo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     private String userName;
     private String mailId;
     private String location;
