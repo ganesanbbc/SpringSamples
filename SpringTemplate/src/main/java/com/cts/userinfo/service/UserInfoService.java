@@ -3,6 +3,7 @@ package com.cts.userinfo.service;
 import com.cts.userinfo.dao.UserInfoDAO;
 import com.cts.userinfo.vo.UserInfo;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,21 +18,25 @@ public class UserInfoService implements IUserInfoService {
 
     @Override
     public UserInfo createUserInfo(UserInfo userInfo) {
-        return dao.createUser(userInfo);
+        return dao.saveAndFlush(userInfo);
     }
 
     @Override
     public List<UserInfo> readAllUsers() {
-        return dao.readAllUsers();
+        return dao.findAll();
     }
 
     @Override
-    public UserInfo updateUserInfo(UserInfo customer) {
-        return dao.updateUserInfo(customer);
+    public UserInfo updateUserInfo(long userId, UserInfo userInfo) {
+        UserInfo oldUserinfo = dao.findOne(userId);
+        BeanUtils.copyProperties(userInfo, oldUserinfo);
+        return dao.saveAndFlush(userInfo);
     }
 
     @Override
     public boolean deleteUserInfo(long id) {
-        return dao.deleteUser(id);
+        UserInfo userinfo = dao.findOne(id);
+        dao.delete(userinfo);
+        return true;
     }
 }

@@ -17,7 +17,7 @@ public class UserInfoController {
         String ROOT = "/";
         String CREATE_USER = "createUser";
         String READ_USER = "readUser";
-        String UPDATE_USER = "updateUser";
+        String UPDATE_USER = "updateUser/{id}";
         String DELETE_USER = "deleteUser/{id}";
     }
 
@@ -36,8 +36,8 @@ public class UserInfoController {
     }
 
     @RequestMapping(value = EndPoint.UPDATE_USER, method = RequestMethod.POST)
-    public UserInfo updateUser(@RequestBody UserInfo userInfo) {
-        return service.updateUserInfo(userInfo);
+    public UserInfo updateUser(@PathVariable long userId, @RequestBody UserInfo userInfo) {
+        return service.updateUserInfo(userId,userInfo);
     }
 
     @RequestMapping(value = EndPoint.DELETE_USER, method = RequestMethod.GET)
