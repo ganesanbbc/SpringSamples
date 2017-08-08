@@ -1,6 +1,5 @@
 package com.cts.userinfo.template;
 
-import com.cts.userinfo.dao.UserInfoDAOImpl;
 import com.cts.userinfo.service.UserInfoService;
 import com.cts.userinfo.vo.UserInfo;
 import org.junit.Before;
