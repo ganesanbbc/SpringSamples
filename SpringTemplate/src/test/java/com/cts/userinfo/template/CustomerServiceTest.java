@@ -1,5 +1,6 @@
 package com.cts.userinfo.template;
 
+import com.cts.userinfo.dao.UserInfoDAO;
 import com.cts.userinfo.service.UserInfoService;
 import com.cts.userinfo.vo.UserInfo;
 import org.junit.Before;
@@ -33,7 +34,7 @@ public class CustomerServiceTest {
     UserInfoService customerService;
 
     @Mock
-    UserInfoDAOImpl customerDao;
+    UserInfoDAO customerDao;
 
     @Before
     public void setup() {
@@ -43,7 +44,7 @@ public class CustomerServiceTest {
     @Test
     public void shouldCreateTheCustomer() throws Exception {
         UserInfo customer = new UserInfo("Sample");
-        Mockito.when(customerDao.createUser(customer)).thenReturn(customer);
+        Mockito.when(customerDao.saveAndFlush(customer)).thenReturn(customer);
         UserInfo actual = customerService.createUserInfo(customer);
         assertEquals(customer.getUserName(), actual.getUserName());
     }
@@ -52,7 +53,7 @@ public class CustomerServiceTest {
     public void thatRespondListOfCustomers() {
         List<UserInfo> customerList = new ArrayList<>();
         customerList.add(new UserInfo("Test UserInfo"));
-        Mockito.when(customerDao.readAllUsers()).thenReturn(customerList);
+        Mockito.when(customerDao.findAll()).thenReturn(customerList);
 
         List<UserInfo> actualCustomerList = customerService.readAllUsers();
         assertThat(actualCustomerList.size(), is(customerList.size()));
