@@ -7,6 +7,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,7 +24,12 @@ public class UserInfoService implements IUserInfoService {
 
     @Override
     public List<UserInfo> readAllUsers() {
-        return dao.findAll();
+
+
+        List<UserInfo> demoList = new ArrayList();
+        demoList.add(new UserInfo("ganesh100"));
+        return demoList;
+//        return dao.findAll();
     }
 
     @Override

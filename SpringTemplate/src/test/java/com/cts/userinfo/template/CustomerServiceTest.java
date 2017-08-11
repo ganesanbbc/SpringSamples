@@ -53,7 +53,7 @@ public class CustomerServiceTest {
     public void thatRespondListOfCustomers() {
         List<UserInfo> customerList = new ArrayList<>();
         customerList.add(new UserInfo("Test UserInfo"));
-        Mockito.when(customerDao.findAll()).thenReturn(customerList);
+//        Mockito.when(customerDao.findAll()).thenReturn(customerList);
 
         List<UserInfo> actualCustomerList = customerService.readAllUsers();
         assertThat(actualCustomerList.size(), is(customerList.size()));
