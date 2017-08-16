@@ -27,7 +27,7 @@ public class UserInfoService implements IUserInfoService {
 
 
         List<UserInfo> demoList = new ArrayList();
-        demoList.add(new UserInfo("ganesh100"));
+        demoList.add(new UserInfo("ganesh101"));
         return demoList;
 //        return dao.findAll();
     }
